@@ -9,12 +9,17 @@ class QuestionModel(models.Model):
         verbose_name_plural = 'Todoリスト'
 
     title = models.CharField(
-        verbose_name="タイトル",
+        verbose_name="質問タイトル",
         max_length=50,
     )
     content = models.TextField(
-        verbose_name="内容"
+        verbose_name="質問内容"
     )
+
+    idea = models.TextField(
+        verbose_name="自分の認識or行った対処法"
+    )
+
     deadline = models.DateTimeField(
         verbose_name="期日",
         default=timezone.now

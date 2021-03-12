@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.views import generic
+from django.views import generic, View
 from .models import QuestionModel
 from django.urls import reverse_lazy
+from . import forms
 
 # Create your views here.
 
@@ -32,6 +33,21 @@ class QuestionDelete(generic.DeleteView):
 class QuestionCreate(generic.CreateView):
     template_name = 'question/create.html'
     model = QuestionModel
-    fields = ('title', 'content', 'deadline')
+    fields = ('title', 'content', 'idea', 'deadline')
 
     success_url = reverse_lazy('list')
+
+class CategoryView(View):
+    def get(self, request):
+        form = forms.CategoryForm()
+        form.fields['choice1'].choices = [
+            ('1', 'エラー対処'),
+            ('2', '技術質問 '),
+        ]
+        context = {
+            'form': form
+        }
+
+        return render(request, 'create.html', context)
+
+sample_choice_add_view = CategoryView.as_view()
