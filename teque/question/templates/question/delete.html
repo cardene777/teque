@@ -11,7 +11,14 @@
         <form action="" method="POST">
         {% csrf_token %}
         <h1>{{ object.title }}</h1>
+        <p>{{ object.category }}</p>
+        <p>{{ object.level }}</p>
         <p>{{ object.content }}</p>
+        <p>{{ object.idea }}</p>
+        <img src="{{ object.image_1 }}{{ object.image_1.errors }}">
+        <img src="{{ object.image_2 }}{{ object.image_2.errors }}">
+        <img src="{{ object.image_3 }}{{ object.image_3.errors }}">
+        <img src="{{ object.image_4 }}{{ object.image_4.errors }}">
         <p>{{ object.deadline }}</p>
         <p>本当に削除しますか？</p>
         <input type="submit" value="削除">
