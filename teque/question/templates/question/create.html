@@ -8,14 +8,16 @@
       </div>
     </div>
     <div class="container">
-        <form method="POST" aciton="">
+
+<form method="POST" aciton="">
           <select name="choice1" id="id_choice1">
             <option value="1">エラー対処</option>
             <option value="2">技術質問</option>
           </select>
           <input type="hidden" name="csrfmiddlewaretoken" value="xxxxxxxx">
         </form>
-        <form action="" method="POST">
+
+        <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
         <input type="submit" value="保存">
