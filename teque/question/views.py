@@ -4,6 +4,8 @@ from .models import QuestionModel
 from .forms import UpLoadImgForm
 from django.urls import reverse_lazy
 from . import forms
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -67,3 +69,8 @@ def view_article(request,pk):
     context = {"article": article}
     return render(request, template_name, context)
 '''
+
+
+@login_required  # 追加
+def post_list(request):
+    return render(request, 'question/post_list.html',  {})
