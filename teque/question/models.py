@@ -77,7 +77,6 @@ class QuestionModel(models.Model):
     def __str__(self):
         return self.title  
 
-'''
 #コメント機能
 class Comment(models.Model):
     text = models.TextField()
@@ -85,4 +84,5 @@ class Comment(models.Model):
     article = models.ForeignKey(to=QuestionModel, related_name='comments', on_delete=models.CASCADE)
     def __str__(self):
         return self.text
-'''
+
+
