@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">新規作成フォーム</h1>
+        <p class="lead">新しいQuestionを作成しましょう</p>
+      </div>
+    </div>
+    <div class="container">
+
+{% comment %} <form method="POST" aciton="">
+          <select name="choice1" id="id_choice1">
+            <option value="1">エラー対処</option>
+            <option value="2">技術質問</option>
+          </select>
+          <input type="hidden" name="csrfmiddlewaretoken" value="xxxxxxxx">
+        </form> {% endcomment %}
+
+        <form method="POST" class="post-form" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">保存</button>
+        </form>
+    </div>
+    <div class="container">
+        <p class="btn-content"><a href="{% url 'question:list' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">一覧に戻る</a></p>
+    </div>
+{% endblock content %}
