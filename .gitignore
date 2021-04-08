@@ -1,7 +1,0 @@
-### Django ###
-__pycache__/
-/db.sqlite3
-media/
-.idea/
-/.DS_Store
-teque/question/migrations
