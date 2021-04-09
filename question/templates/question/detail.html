@@ -16,21 +16,21 @@
 
         <div class="post">
         <div class ="image">
-        {% if obj.image_1 %}
-            <img src="{{ obj.image_1.url }}" style="width:300px;height:auto">
+        {% if source.image_1 %}
+            <img src="{{ source.image_1.url }}" style="width:300px;height:auto">
         {% endif %}
-        {% if obj.image_2 %}
-            <img src="{{ obj.image_2.url }}" style="width:300px;height:auto">
+        {% if source.image_2 %}
+            <img src="{{ source.image_2.url }}" style="width:300px;height:auto">
         {% endif %}
-        {% if obj.image_3 %}
-            <img src="{{ obj.image_3.url }}" style="width:300px;height:auto">
+        {% if source.image_3 %}
+            <img src="{{ source.image_3.url }}" style="width:300px;height:auto">
         {% endif %}
-        {% if obj.image_4 %}
-            <img src="{{ obj.image_4.url }}" style="width:300px;height:auto">
+        {% if source.image_4 %}
+            <img src="{{ source.image_4.url }}" style="width:300px;height:auto">
         {% endif %}
         </div>
             <div class="date">
-                {{ obj.published_date }}
+                {{ source.published_date }}
             </div>
         </div>
 

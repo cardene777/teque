@@ -16,14 +16,14 @@
     <div>
         <p class="new-btn"><a href="{% url 'question:create' %}" class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true">新規作成</a></p>
     </div>
-    {% for list in object_list %}
+    {% for item in items %}
         <div class="one_box">
-            <h1 class="text-center">{{ list.title }}</h1>
-            <h4 class="text-center">{{ list.deadline }}</h4>
+            <h1 class="text-center">{{ item.title }}</h1>
+            <h4 class="text-center">{{ item.deadline }}</h4>
             <div class="btns text-center">
-                <a href="{% url 'question:detail' list.pk %}" class="btn btn-primary"tabindex="-1" role="button" aria-disabled="true">詳細</a>
-                <a href="{% url 'question:update' list.pk %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
-                <a href="{% url 'question:delete' list.pk %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">削除</a>
+                <a href="{% url 'question:detail' item.pk %}" class="btn btn-primary"tabindex="-1" role="button" aria-disabled="true">詳細</a>
+                <a href="{% url 'question:update' item.pk %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
+                <a href="{% url 'question:delete' item.pk %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">削除</a>
             </div>
         </div>
     <hr>
