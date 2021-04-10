@@ -13,12 +13,12 @@ from django.utils import timezone
 class QuestionList(generic.ListView):
     template_name = 'question/list.html'
     model = QuestionModel
-    context_object_name = "items"
+    context_object_name = "questions"
 
 #詳細記事,コメント機能
 def question_detail(request, pk):
     #後で変える
-    source = QuestionModel.objects.get(id=pk)
+    question = QuestionModel.objects.get(id=pk)
     # print(f"obj: {obj}")
     # print(f"obj: {obj.title}")
     # print(obj.image_2)
@@ -26,11 +26,11 @@ def question_detail(request, pk):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.article = source
+            comment.article = question
             comment.save()
-    comments = Comment.objects.filter(article=source)
+    comments = Comment.objects.filter(article=question)
     parms = {
-        'source': source,
+        'question': question,
         'comments': comments,
     }
     return render(request, 'question/detail.html', parms)
@@ -46,7 +46,7 @@ class QuestionUpdate(generic.UpdateView):
 class QuestionDelete(generic.DeleteView):
     template_name = 'question/delete.html'
     model = QuestionModel
-    context_object_name = "items"
+    context_object_name = "question"
 
     success_url = reverse_lazy('question:list')
     

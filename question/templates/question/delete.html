@@ -10,18 +10,18 @@
     <div class="container">
         <form action="" method="POST">
         {% csrf_token %}
-        <h1>{{ items.title }}</h1>
-        <p>{{ items.category }}</p>
-        <p>{{ items.level }}</p>
-        <p>{{ items.content }}</p>
-        <p>{{ items.idea }}</p>
+        <h1>{{ question.title }}</h1>
+        <p>{{ question.category }}</p>
+        <p>{{ question.level }}</p>
+        <p>{{ question.content }}</p>
+        <p>{{ question.idea }}</p>
         <div class ="image">
             <img src="/{{ question.image_1.url }}" style="width:300px;height:auto">
             <img src="/{{ question.image_2.url }}" style="width:300px;height:auto">
             <img src="/{{ question.image_3.url }}" style="width:300px;height:auto">
             <img src="/{{ question.image_4.url }}" style="width:300px;height:auto">
         </div>
-        <p>{{ items.deadline }}</p>
+        <p>{{ question.deadline }}</p>
         <p>本当に削除しますか？</p>
         <input type="submit" value="削除">
     </form>
