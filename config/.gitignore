@@ -1,2 +1,5 @@
 # settings.py を無視する
 settings.py
+
+#__init__.py
+__init__.py

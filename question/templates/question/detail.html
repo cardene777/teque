@@ -8,11 +8,11 @@
       </div>
     </div>
     <div class="container">
-        {% comment %} <h1>{{ object.title }}</h1>
-        <p>{{ object.category }}</p>
-        <p>{{ object.level }}</p>
-        <p>{{ object.content }}</p>
-        <p>{{ object.idea }}</p> {% endcomment %}
+        <h1>{{ question.title }}</h1>
+        <p>{{ question.get_category_display }}</p>
+        <p>{{ question.get_level_display }}</p>
+        <p>{{ question.content }}</p>
+        <p>{{ question.idea }}</p>
 
         <div class="post">
         <div class ="image">
@@ -34,7 +34,6 @@
             </div>
         </div>
 
-        {% comment %} <p>{{ object.deadline }}</p> {% endcomment %}
     </div>
 
     <hr class="my-4">
