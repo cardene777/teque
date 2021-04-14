@@ -1,8 +1,8 @@
-# manage.pyを無視する
+# manage.pyを無視
 manage.py
 
-#全ての__init__.py を無視する
-/__init__.py/
+#db.sqlite3を無視
+db.sqlite3
 
-#全ての__pycache__ディレクトリ を無視する
-/__pycache__/
+#mediaを無視
+media/

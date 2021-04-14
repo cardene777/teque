@@ -1,2 +1,8 @@
 # migrationsディレクトリ を無視する
 migrations/
+
+#__init__.py を無視
+/__init__.py/
+
+#__pycache__ディレクトリ を無視
+/__pycache__/

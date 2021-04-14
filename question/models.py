@@ -89,7 +89,7 @@ class QuestionModel(models.Model):
 
 #コメント機能
 class Comment(models.Model):
-    text = models.TextField(default="")
+    comment = models.TextField(default="")
 
     created_at = models.DateTimeField(auto_now_add=True)
 
