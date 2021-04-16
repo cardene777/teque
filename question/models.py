@@ -89,13 +89,13 @@ class QuestionModel(models.Model):
 
 #コメント機能
 class Comment(models.Model):
-    text = models.TextField(default="")
+    comment = models.TextField(default="")
 
     created_at = models.DateTimeField(auto_now_add=True)
 
     article = models.ForeignKey(to=QuestionModel, related_name='comments', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text
+        return self.comment
 
 
