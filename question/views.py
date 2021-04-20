@@ -13,7 +13,7 @@ from django.utils import timezone
 class QuestionList(generic.ListView):
     template_name = 'question/list.html'
     model = QuestionModel
-    context_object_name = “questions”
+    context_object_name = 'questions'
 
 #詳細記事,コメント機能
 def question_detail(request, pk):
@@ -39,14 +39,14 @@ def question_detail(request, pk):
 class QuestionUpdate(generic.UpdateView):
     template_name = 'question/update.html'
     model = QuestionModel
-    fields = ('title', 'content', 'deadline')
+    fields = ('category', 'level', 'title', 'content', 'deadline', 'idea',)
     success_url = reverse_lazy('question:list')
 
 
 class QuestionDelete(generic.DeleteView):
     template_name = 'question/delete.html'
     model = QuestionModel
-    context_object_name = “question”
+    context_object_name = 'question'
 
     success_url = reverse_lazy('question:list')
     

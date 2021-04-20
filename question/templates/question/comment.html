@@ -1,7 +1,7 @@
 
 <div>
+  <div class="list-group container"> 
   <h3 class="h6">コメント</h3>
-  <div class="list-group">
 
     {% for comment in comments%}
     <a class="list-group-item list-group-item-action p-3 rounded-0">
@@ -12,6 +12,7 @@
   </div>
 
   <!--ログインしているなら-->
+  <div class="container">
   {% if user.is_authenticated %}
   <form method="POST" class="my-4">
     {% csrf_token %}
@@ -25,12 +26,13 @@
       </button>
     </div>
   </form>
+  
 
   {% else %}
    <p class="my-4">
     コメントを投稿するには<a href="{% url 'accounts:signup' %}">ログイン</a>してください。
    </p>
   {% endif %}
-
+  </div>
 
 </div>
