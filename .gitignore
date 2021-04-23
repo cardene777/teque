@@ -1,4 +1,3 @@
-#全ての__pycache__ディレクトリ を無視する
 __pycache__/
 
 db.sqlite3

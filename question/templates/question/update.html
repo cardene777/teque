@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div class="jumbotron jumbotron-fluid">
@@ -10,7 +11,7 @@
     <div class="container">
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             <input type="submit" value="更新"></input>
         </form>
     </div>
