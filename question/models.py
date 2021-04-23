@@ -6,8 +6,8 @@ import os
 
 class QuestionModel(models.Model):
     class Meta:
-        verbose_name = "Todoリスト"
-        verbose_name_plural = 'Todoリスト'
+        verbose_name = "質問掲示板"
+        verbose_name_plural = '質問掲示板'
 
     CATEGORY_CHOICES = (
     (1, 'エラー対処'),
